@@ -1,0 +1,64 @@
+#dining{
+@include container(100%);
+    h1 , h2{
+      color: $red;
+      padding: 10px 0;
+    }
+
+    img{
+      width: 100%;
+      @include border-radius(10px);
+    }
+  h1{
+    font-size: 1.5em;
+  }
+    h2{
+      font-size: 1.3em;
+    }
+
+    @include breakpoint($small){
+      #areadining{
+        margin-bottom: 30px;
+
+        h1{
+          font-size: 2.5em;
+          font-weight: $thin;
+          margin-bottom: 40px;
+        }
+
+        p{
+          font-size: 1.5em;
+          line-height: 140%;
+        }//p
+      }//areadining
+
+      section {
+          @include span(4 of 12);
+
+          h2 {
+            font-size: 1.2em;
+            line-height: 120%;
+            color: $pink;
+          }
+          p {
+            padding-top: 10px;
+            font-size: 1em;
+            line-height: 130%;
+          }
+        }
+
+
+    }//small
+
+#roomservice{
+
+
+  @include background-image(linear-gradient($light, lighten($yellow , 35)));
+  border-top: 1px $red solid;
+  border-bottom: 1px $red solid;
+  text-align: center;
+
+}
+
+
+}//dining

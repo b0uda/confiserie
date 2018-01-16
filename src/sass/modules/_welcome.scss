@@ -1,0 +1,44 @@
+#welcome{
+
+@include background-image(linear-gradient($yellow , $orange));
+
+  article{
+    @include container(70%);
+      text-align: center;
+    @include breakpoint($small){
+        @include container(32em);
+        padding: 60px 0;
+    }//breakpoint
+  }//article
+
+  h1{
+      color: darken($orange , 10);
+      font-size: 1.5em;
+      padding: 10px;
+      line-height: 100%;
+  }//h1
+
+  .gallery{
+
+    @include clearfix;
+
+    img{
+      @include border-radius(20px);
+      display: none;
+      @include breakpoint($small){
+        display: block;
+        @include gallery(1 of 4);
+        &.hidesm{
+          display: none;
+        }//.hidesm
+      }//breakpoint small
+      @include breakpoint($medium){
+        display: block;
+        @include gallery(1 of 5);
+        &.hidesm{
+          display: block;
+        }//hidesm
+      }//breakpoint medium
+    }//img
+  }//article
+}//#welcome

@@ -1,0 +1,22 @@
+#attractions{
+  @include clearfix;
+  @include backImage('../images/hotel/attractions.jpg');
+  @include container(100%);
+
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
+
+.content{
+background: rgba($light , .8);
+@include border-radius(10px);
+padding: 10px;
+@include container(80%);
+
+@include breakpoint($medium) {
+      @include container(50%);
+    }
+}
+
+}

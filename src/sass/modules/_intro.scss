@@ -1,0 +1,44 @@
+header{
+
+  .fullheight{
+
+
+    @include display-flex();
+    @include align-items(center);
+@include justify-content(center);
+
+    @include backImage('./../images/yassine/confiserie-yassine-kenitra.png');
+    .hgroup{
+    padding: 100px 0;
+      h1{
+        color: $light;
+        font-size: 5em;
+        text-align: center;
+        font-weight: $heavy;
+        @include text-shadow($dark 0 0 20px);
+        line-height: .8em;
+      } //h1
+      h2{
+        color: $light;
+        font-size: 1.5em;
+        text-align: center;
+        width: 60%;
+        max-width: 200px;
+        margin: 0 auto;
+        border: 1px $light solid;
+        margin-top:15px;
+        display: block;
+        padding: 10px 0px;
+        font-size: 1.3em;
+        background: rgba($headersubbg , 0.5);
+      }
+      p{
+        text-align: center;
+        img{
+          padding-top:50px;
+          max-width: 50px;
+        }//img
+      }//p
+    } //hgroup
+  } //fullheight
+}//header

@@ -1,0 +1,59 @@
+#rooms{
+  header{
+    @include container(80%);
+
+    @include breakpoint($medium){
+      @include container();
+      @include pad(1,1);
+    }//breakpoint
+
+    h1{
+      color: lighten($blue , 20);
+      font-weight: $bold;
+      font-size: 1.3em;
+  }//h1
+
+  p{
+    padding-bottom: 3em;
+  }
+
+
+
+  }//header
+
+  .room{
+    @include container(100%);
+    @include pad(1,1);
+    padding: 100px 0;
+
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
+    @include breakpoint($small){
+      @include pad(7,1);
+    }//small
+
+    &#piccadilly { @include backImage('./../images/yassine/confiserie-yassine-kenitra1.png');}
+    &#cambridge { @include backImage('./../images/yassine/confiserie-yassine-kenitra2.png');}
+    &#westminster {@include backImage('./../images/yassine/confiserie-yassine-kenitra3.png');}
+    &#oxford {@include backImage('./../images/yassine/confiserie-yassine-kenitra4.png');}
+    &#victoria {@include backImage('./../images/yassine/confiserie-yassine-kenitra5.png');}
+    &#manchester {@include backImage('./../images/yassine/confiserie-yassine-kenitra6.png');}
+
+    .content{
+      padding: 20px;
+      background: rgba($light , .8);
+      @include border-radius(20px);
+
+      h1{
+        color: $red;
+      }
+
+
+
+    }//.content
+  }//.room
+
+
+}//rooms

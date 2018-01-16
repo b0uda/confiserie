@@ -1,0 +1,32 @@
+body{
+	
+	font: $mainFont;
+	color: $typeDefault;
+	background: $backgroundColor;
+	// @include box-sizing(border-box); //uses border box sizing like the old IE
+
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+	
+}
+
+
+
+#{headings()} {
+	font: $headFont;
+	color: $headColor;
+	font-weight: $bold;
+	
+}
+
+
+p{
+
+	font-weight: $thin;
+	padding-bottom: 10px;
+}
