@@ -1,4 +1,4 @@
-
+// import {} from 'scrollmagic';
 
   //window height
    var wheight = $(window).height(); //get height of the window
@@ -11,13 +11,20 @@
    }) //on resize
 
 
-   // init controller
-   var controller = new ScrollMagic.Controller();
+// init controller
+var controller = new ScrollMagic.Controller({
+  globalSceneOptions:{
+   
+  }
+});
 
-   // create a scene
-   new ScrollMagic.Scene({
-   		duration: 100,	// the scne should last for a scroll distance of 100px
-   		offset: 50		// start this scene after scrolling for 50px
-   	})
-   	.setPin("#my-sticky-element") // pins the element for the the scene's duration
-   	.addTo(controller); // assign the scene to the controller
+var attractionsTween = TweenMax.staggerFromTo('#attractions article' , 1 , {opacity: 0 , scale: 0 } , {opacity: 1 , scale: 1 , ease: Back.easeOut , delay: .5 } );
+
+// create a scene
+var scene = new ScrollMagic.Scene({
+  triggerHook: .5,
+  triggerElement: '#attractions' 
+  
+})
+  .setTween(attractionsTween)
+  .addTo(controller); 

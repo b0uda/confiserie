@@ -36,7 +36,6 @@
     "lodash": "^4.17.4",
     "popper.js": "^1.12.9",
     "precss": "^2.0.0",
-    "scrollmagic": "^2.0.5",
     "susy": "^2"
   }
 }
