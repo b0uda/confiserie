@@ -44,6 +44,76 @@ var nav = new ScrollMagic.Scene({
  .setPin('nav')
  .addTo(controller);
 
+// highlight links nav on scroll
+
+ $(window).scroll(function(){
+
+  var windowPos = $(window).scrollTop() + topoffset;
+  $('nav li a').removeClass('active');
+   if (windowPos > $('#confiserieinfo').offset().top ){
+      $('nav li a').removeClass('active');
+      $('a[href$="#confiserieinfo"]').addClass('active');
+    }
+   if (windowPos > $('#rooms').offset().top) {
+     $('nav li a').removeClass('active');
+     $('a[href$="#rooms"]').addClass('active');
+   }
+   if (windowPos > $('#dining').offset().top) {
+     $('nav li a').removeClass('active');
+     $('a[href$="#dining"]').addClass('active');
+   }
+   if (windowPos > $('#events').offset().top) {
+     $('nav li a').removeClass('active');
+     $('a[href$="#events"]').addClass('active');
+   }
+   if (windowPos > $('#attractions').offset().top) {
+     $('nav li a').removeClass('active');
+     $('a[href$="#attractions"]').addClass('active');
+   }
+ });
+
+
+//  rooms animation
+
+var start = {
+  bottom: -700 ,
+  scale : 0 , 
+  opacity: 0
+  
+}
+
+var finish = {
+  bottom: 0 ,
+  scale: 1 ,
+  opacity: 1,
+  ease: Back.easeOut ,
+  repeat: 1,
+  yoyo: true
+}
+
+
+
+var roomTween = TweenMax.staggerFromTo( '#piccadilly .content' , 1 , start , finish );
+
+var pin = new ScrollMagic.Scene({
+  triggerHook: 'onLeave',
+  triggerElement: '#piccadilly'  ,
+  offset: -topoffset,
+  duration: 500
+}).setPin('#piccadilly')
+  .setTween(roomTween)
+  .addTo(controller);
+
+var roomTween = TweenMax.staggerFromTo('#cambridge .content', 1, start, finish);
+
+var pin = new ScrollMagic.Scene({
+  triggerHook: 'onLeave',
+  triggerElement: '#cambridge',
+  offset: -topoffset,
+  duration: 500
+}).setPin('#cambridge')
+  .setTween(roomTween)
+  .addTo(controller); 
 
 // last part of the page animation
 
